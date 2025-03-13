@@ -14,14 +14,14 @@
 
   <body>
     
-    <div class="title-screen">
+    <div id= "title-screen" class="title-screen">
       <div class="header-div">
         <div class="option1">option1</div>
         <div class="option2">option2</div>
       </div>
       <div class="title-div">clicking game.</div>
       <div class="start-button-div"> 
-        <button class="start-button">START</button>
+        <button class="start-button" onclick="startGame()">START</button>
       </div>
       <div class="times-div">
         <div class="previous-time-div">
@@ -33,6 +33,16 @@
           <div class="bscore-time">-- --</div>
         </div>
       </div>
+    </div>
+
+    <div id="game-screen" class="game-screen">
+      Game Screen
+      <button onclick="endGame()"></button>
+    </div>
+
+    <div id="end-screen" class="end-screen">
+      End Screen
+      <button onclick="startGame()"></button>
     </div>
 
     <script src="scripts.js"></script>
