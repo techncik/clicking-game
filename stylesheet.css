@@ -1,30 +1,149 @@
 /* Styles for buttomgame.html */
 
-.button-game-title {
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    margin-top: 100px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 100px;
+html {
+    font-family: Poppins ;
+    height: 100%;
 }
 
-.start-button-container {
-    background-color: blue;
+
+
+.title-screen {
+    /* TODO: Change background colour to an whitesmoke. Bright colour now for highlight*/
+    background-color: whitesmoke;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* Make the title screen div stretch the whole page */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+
+/* 
+HEADER ELEMENTS
+-header-div
+-option1,
+-option2
+*/
+.header-div {
+    background-color: whitesmoke(7, 114, 207);
+    top: 0;
+    position: fixed;
+    height: 50px;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+    border-bottom: 1px solid rgb(204, 204, 204);
+}
+
+.option1,
+.option2 {
+    font-size: 30px;
+}
+
+/*
+TITLE ELEMENTS
+-title-div
+*/
+.title-div {
+    background-color: whitesmoke;
+    display: flex;
+    top: 25%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    font-size: 75px;
+}
+
+
+/*
+START BUTTON ELEMENTS
+-start-button-div
+-start-button (button)
+*/
+.start-button-div {
+    background-color: whitesmoke;
+    position: absolute;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
-    margin-top: 30px;
 }
 
 .start-button {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    padding-top: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 5px;
-    border: none;
-    border-width: 2px;
-    border-radius: 5px;
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
     cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    height: 80px;
+    width: 80px;
+    
 }
+
+.start-button:hover,
+.start-button:active {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.start-button:active {
+    opacity: .5;
+  }
+
+/*
+RESULT ELEMENTS
+-times-div
+*/
+.times-div {
+    background-color: whitesmoke;
+    position: fixed;
+    top: 75%;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 25px;
+    
+}
+
+.previous-time-div,
+.best-time-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
