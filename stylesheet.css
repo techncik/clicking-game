@@ -5,12 +5,13 @@ html {
     height: 100%;
 }
 
+body {
+    background-color: whitesmoke;
+}
+
 
 
 .title-screen {
-    /* TODO: Change background colour to an whitesmoke. Bright colour now for highlight*/
-    background-color: whitesmoke;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -57,7 +58,6 @@ TITLE ELEMENTS
 -title-div
 */
 .title-div {
-    background-color: whitesmoke;
     display: flex;
     top: 25%;
     position: fixed;
@@ -74,7 +74,6 @@ START BUTTON ELEMENTS
 -start-button (button)
 */
 .start-button-div {
-    background-color: whitesmoke;
     position: absolute;
     left: 0;
     right: 0;
@@ -126,7 +125,6 @@ RESULT ELEMENTS
 -times-div
 */
 .times-div {
-    background-color: whitesmoke;
     position: fixed;
     top: 75%;
     left: 0;
@@ -147,11 +145,67 @@ RESULT ELEMENTS
     align-items: center;
 }
 
+/*  
+Game Screen related styles
+*/
+.game-screen {
+    display: none;
+}
+
+.progress-number {
+}
+
+
 .game-button {
+    background: #FF4742;
+    border: 1px solid #FF4742;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    line-height: 16px;
+    min-height: 40px;
+    outline: 0;
+    padding: 12px 14px;
+    text-align: center;
+    text-rendering: geometricprecision;
+    text-transform: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
     height: 80px;
     width: 80px;
     left: -300000px;
     position: absolute;
+}
+
+.game-button:hover {
+    background-color: initial;
+    background-position: 0 0;
+    color: #FF4742;
+}
+
+.timer-container {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    display: flex;
     
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+}
+
+.timer-display {
+    color: grey;
+    font-size: 200px;
+    opacity: 0.1;
 }
 

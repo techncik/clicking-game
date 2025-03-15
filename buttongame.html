@@ -22,15 +22,15 @@
       </div>
       <div class="title-div">clicking game.</div>
       <div class="start-button-div"> 
-        <button class="start-button" onclick="startGame()">START</button>
+        <button id="start-button" class="start-button" onclick="startGame()">START</button>
       </div>
       <div class="times-div">
         <div class="previous-time-div">
-          <div class="previous-time-text">previous time</div>
+          <div id="previous-time-text" class="previous-time-text">previous time</div>
           <div class="pscore-time">-- --</div>
         </div>
         <div class="best-time-div">
-          <div class="best-time-text">best time</div>
+          <div id="best-time-text" class="best-time-text">best time</div>
           <div class="bscore-time">-- --</div>
         </div>
       </div>
@@ -38,15 +38,15 @@
 
     <!--Game screen -->
     <div id="game-screen" class="game-screen">
-      Game Screen
+      <div id="progress-number" class="progress-number">0/10</div>
+      <div id="time-container" class="timer-container">
+        <div id="timer-display" class="timer-display">
+          00:00:00:00
+        </div>
+      </div>
       <button id="game-button" class="game-button" ></button>
     </div>
 
-    <!--End of game screen -->
-    <div id="end-screen" class="end-screen">
-      End Screen
-      <button onclick="startGame()"></button>
-    </div>
 
     <script src="scripts.js"></script>
   </body>
