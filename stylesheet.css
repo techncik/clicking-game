@@ -147,3 +147,11 @@ RESULT ELEMENTS
     align-items: center;
 }
 
+.game-button {
+    height: 80px;
+    width: 80px;
+    left: -300000px;
+    position: absolute;
+    
+}
+
