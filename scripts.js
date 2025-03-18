@@ -11,6 +11,8 @@ const buttonHeight = 80;
 const buttonWidth = 80;
 const maxWidth = window.innerWidth - buttonWidth;
 const maxHeight = window.innerHeight - buttonHeight;
+const clickAudio = new Audio();
+const missAudio = new Audio();
 
 let amountOfButtons = 10;
 let timer = null;
@@ -21,8 +23,19 @@ let bestTime = 0;
 let runTime = 0;
 let buttonClicks = 0;
 let display = 0;
+let totalClicks = 0;
 
+clickAudio.src = "assets/buttongame2-click.wav";
+clickAudio.playbackRate = 2;
+missAudio.src = "assets/buttongame2-miss-click.wav";
+missAudio.playbackRate = 2;
 
+/* Checks for the game button being clicked */
+window.addEventListener('DOMContentLoaded', () => {
+
+    gameButton.addEventListener('click', () => buttonClicked());
+    
+})
 
 /* Starts game, swapping from title screen to game screen */
 function startGame() {
@@ -33,6 +46,7 @@ function startGame() {
 
     /* Reset clicks and timer */
     buttonClicks = 0;
+    totalClicks = 0;
     progressDisplay.textContent = `${buttonClicks}/${amountOfButtons}`;
     resetTimer();
 
@@ -72,16 +86,12 @@ function endGame() {
     }
 }
 
-/* Checks for the game button being clicked */
-window.addEventListener('DOMContentLoaded', () => {
-    gameButton.addEventListener('click', () => buttonClicked());
-})
-
 /* Function to handle logic when game button is clicked */
 function buttonClicked() {
 
     /* Update number of clicks */
     buttonClicks++;
+    clickAudio.play();
     progressDisplay.textContent = `${buttonClicks}/${amountOfButtons}`;
 
     /* End game is last button is clicked */
@@ -93,6 +103,12 @@ function buttonClicked() {
     /* Randomise button position if game is not over */
     gameButton.style.left = Math.floor(Math.random() * (maxWidth + 1)) + 'px';
     gameButton.style.top = Math.floor(Math.random() * (maxHeight + 1)) + 'px';
+}
+
+function missClick() {
+
+    totalClicks++;
+    missAudio.play();
 }
 
 /* Function to start the timer. Called when start button is pressed */
