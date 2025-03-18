@@ -29,7 +29,7 @@ function startGame() {
 
     /* Display the game screen, hide title screen */
     titleDiv.style.display = 'none';
-    gameDiv.style.display = 'block';
+    gameDiv.style.display = 'flex';
 
     /* Reset clicks and timer */
     buttonClicks = 0;
@@ -49,7 +49,7 @@ function endGame() {
 
     /* Swap display from game screen to title screen */
     gameDiv.style.display = 'none';
-    titleDiv.style.display = 'block';
+    titleDiv.style.display = 'flex';
 
     /* TODO; Reeset the start button */
     startButton.style.display = 'inline';
