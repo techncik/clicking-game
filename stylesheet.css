@@ -138,7 +138,8 @@ RESULT ELEMENTS
 }
 
 .previous-time-div,
-.best-time-div {
+.best-time-div, 
+.missed-clicks-div{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -151,10 +152,6 @@ Game Screen related styles
 .game-screen {
     display: none;
 }
-
-.progress-number {
-}
-
 
 .game-button {
     background: #FF4742;

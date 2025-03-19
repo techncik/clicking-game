@@ -6,6 +6,7 @@ const progressDisplay = document.getElementById('progress-number');
 const timerDisplay = document.getElementById('timer-display');
 const bestTimeDisplay = document.getElementById('bscore-text');
 const prevTimeDisplay = document.getElementById('pscore-text');
+const missedClicksDisplay = document.getElementById('missedClicks');
 const gameButton = document.getElementById('game-button');
 const buttonHeight = 80;
 const buttonWidth = 80;
@@ -31,10 +32,15 @@ missAudio.src = "assets/buttongame2-miss-click.wav";
 missAudio.playbackRate = 2;
 
 /* Checks for the game button being clicked */
-window.addEventListener('DOMContentLoaded', () => {
+gameDiv.addEventListener('click', (e) => {
+    let clickedElem = e.target;
 
-    gameButton.addEventListener('click', () => buttonClicked());
-    
+    if (clickedElem === gameButton) {
+        buttonClicked();
+    }
+    else {
+        missClick();
+    }
 })
 
 /* Starts game, swapping from title screen to game screen */
@@ -47,6 +53,7 @@ function startGame() {
     /* Reset clicks and timer */
     buttonClicks = 0;
     totalClicks = 0;
+    accuracy = 0;
     progressDisplay.textContent = `${buttonClicks}/${amountOfButtons}`;
     resetTimer();
 
@@ -84,6 +91,11 @@ function endGame() {
         bestTime = runTime;
         bestTimeDisplay.textContent = `${seconds} ${milliseconds}`;
     }
+
+    let accuracy = Math.round((amountOfButtons / totalClicks) * 100);
+    missedClicksDisplay.textContent = `${accuracy}%`;
+
+
 }
 
 /* Function to handle logic when game button is clicked */
@@ -91,6 +103,7 @@ function buttonClicked() {
 
     /* Update number of clicks */
     buttonClicks++;
+    totalClicks++;
     clickAudio.play();
     progressDisplay.textContent = `${buttonClicks}/${amountOfButtons}`;
 
