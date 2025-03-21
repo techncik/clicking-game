@@ -76,12 +76,16 @@ function endGame() {
     startButton.style.display = 'inline';
     
 
-    /* Calculate and display the game time */
+    /* Calculate and display the game time, and pad for formatting */
     let convTime = convertElapsedToHMSM(runTime);
     let hours = convTime[0];
     let minutes = convTime[1];
     let seconds = convTime[2];
     let milliseconds = convTime[3];
+
+    minutes = String(minutes).padStart(2, '0');
+    seconds = String(seconds).padStart(2, '0');
+    milliseconds = String(milliseconds).padStart(2, '0');
 
     /* Update previous time */
     prevTimeDisplay.textContent = `${seconds} ${milliseconds}`;
