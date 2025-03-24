@@ -48,11 +48,34 @@ HEADER ELEMENTS
     border-bottom: 1px solid rgb(204, 204, 204);
 }
 
-.option1,
-.option2 {
-    font-size: 30px;
+.settings,
+.leaderboards {
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
 }
 
+.settings-button,
+.leaderboards-button {
+    
+    border: none;
+    background-color: whitesmoke;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+
+.settings-button:hover,
+.leaderboards-button:hover {
+    color: grey;
+}
+
+.settings-button:active,
+.leaderboards-button:active {
+    color: #FF4742;
+}
 /*
 TITLE ELEMENTS
 -title-div
@@ -74,7 +97,7 @@ START BUTTON ELEMENTS
 -start-button (button)
 */
 .start-button-div {
-    position: absolute;
+    flex-direction: row;
     left: 0;
     right: 0;
     display: flex;

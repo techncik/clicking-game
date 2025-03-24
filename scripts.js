@@ -187,3 +187,4 @@ function convertElapsedToHMSM(elapsedTime) {
 
     return [hours, minutes, seconds, milliseconds];
 }
+
