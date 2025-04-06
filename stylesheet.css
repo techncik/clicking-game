@@ -48,17 +48,35 @@ HEADER ELEMENTS
     border-bottom: 1px solid rgb(204, 204, 204);
 }
 
+
 .settings,
 .leaderboards {
     
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex: 2;
+
+}
+
+.settings {
+}
+
+.leaderboards {
+}
+
+.login-div {
+    display: flex;
+    flex: 0.3;
+    flex-direction: row;
+    justify-content: center;
+    border-left: 1px solid rgb(204, 204, 204);
 
 }
 
 .settings-button,
-.leaderboards-button {
+.leaderboards-button,
+.login-button {
     
     border: none;
     background-color: whitesmoke;
@@ -68,12 +86,14 @@ HEADER ELEMENTS
 }
 
 .settings-button:hover,
-.leaderboards-button:hover {
+.leaderboards-button:hover,
+.login-button:hover {
     color: grey;
 }
 
 .settings-button:active,
-.leaderboards-button:active {
+.leaderboards-button:active,
+.login-button:active {
     color: #FF4742;
 }
 /*
